@@ -32,7 +32,7 @@ export async function POST(request: Request){
         }
       )
 
-      const verifyCode = `{Math.floor(Math.random() * 100000 + 100000)}`
+      const verifyCode = Math.floor(Math.random() * 100000 + 100000).toString();
 
       if(existingUserByEmail){
         //todo
