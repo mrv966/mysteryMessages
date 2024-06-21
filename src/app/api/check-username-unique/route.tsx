@@ -20,7 +20,7 @@ export async function GET(request: Request) {
     const result = UsernameQuerySchema.safeParse(queryParams);
     // console.log(result)
     // console.log(result.error?.format())
-    // console.log(result.error?.format())
+    console.log(result.error?.format())
 
     if (!result.success) {
       const usernameErrors = result.error.format().username?._errors || [];
