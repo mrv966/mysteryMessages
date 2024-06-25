@@ -11,7 +11,7 @@ export async function POST(request: Request){
     const session= await getServerSession(authOptions);
     const user: User= session?.user as User
 
-    if(!session || session.user){
+    if(!session || !session.user){
         return Response.json(
             {
                 success: false,
@@ -72,7 +72,8 @@ export async function GET(request: Request) {
   // Get the user session
   const session = await getServerSession(authOptions);
   const user = session?.user;
-  console.log(session)
+  // console.log(session)
+  console.log(user)
 
   // Check if the user is authenticated
   if (!session || !user) {
@@ -98,7 +99,7 @@ export async function GET(request: Request) {
     return Response.json(
       {
         success: true,
-        isAcceptingMessages: foundUser.isAcceptingMessage,
+        isAcceptingMessage: foundUser.isAcceptingMessage,
       },
       { status: 200 }
     );
