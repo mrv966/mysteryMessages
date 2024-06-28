@@ -3,9 +3,10 @@ import { Content } from "next/font/google";
 
 
 //interface for message
-export interface Message extends Document{
-    content: string;
-    createdAt: Date;
+export interface Message extends Document {
+  _id: string;
+  content: string;
+  createdAt: Date;
 }
 
 //schema for message

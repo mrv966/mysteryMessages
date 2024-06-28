@@ -73,7 +73,7 @@ export async function GET(request: Request) {
   const session = await getServerSession(authOptions);
   const user = session?.user;
   // console.log(session)
-  console.log(user)
+  // console.log(user)
 
   // Check if the user is authenticated
   if (!session || !user) {
